@@ -112,6 +112,8 @@
 			);
 			name = Orbit;
 			packageProductDependencies = (
+				528885EB7DBEB1F9480D85F9 /* Supabase */,
+				3B651F955BFA81467933E284 /* KeychainAccess */,
 			);
 			productName = Orbit;
 			productReference = F609F21C2FD61CEA003CA2C6 /* Orbit.app */;
@@ -195,6 +197,10 @@
 			);
 			mainGroup = F609F2132FD61CEA003CA2C6;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				DCB62DE414B69C9F1150F337 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				25DE5F0B08865E4428EA616C /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F609F21D2FD61CEA003CA2C6 /* Products */;
 			projectDirPath = "";
@@ -578,6 +584,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DCB62DE414B69C9F1150F337 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.54.1;
+			};
+		};
+		25DE5F0B08865E4428EA616C /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		528885EB7DBEB1F9480D85F9 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCB62DE414B69C9F1150F337 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+		3B651F955BFA81467933E284 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 25DE5F0B08865E4428EA616C /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F609F2142FD61CEA003CA2C6 /* Project object */;
 }
