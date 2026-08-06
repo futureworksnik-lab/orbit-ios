@@ -1,0 +1,42 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-test-lint:
+    name: Build, Test, Lint
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tools
+        run: brew install xcbeautify swiftlint swiftformat
+      - name: Resolve SPM packages
+        run: xcodebuild -resolvePackageDependencies -project Orbit.xcodeproj -scheme Orbit
+      - name: Build & test
+        run: |
+          set -o pipefail
+          xcodebuild build test \
+            -project Orbit.xcodeproj -scheme Orbit \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            | xcbeautify
+      - name: SwiftLint
+        run: swiftlint lint --strict
+      - name: SwiftFormat (check only)
+        run: swiftformat --lint .
+      - name: Dependency audit (pin discipline)
+        run: |
+          if grep -q '"branch"' Orbit.xcodeproj/project.pbxproj; then
+            echo "::error::A Swift package dependency is pinned to a branch, not a version."
+            exit 1
+          fi
+          test -f Orbit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved || {
+            echo "::error::Package.resolved missing -- dependencies not resolved/committed."
+            exit 1
+          }
+      - name: Banned-word gate
+        run: bash scripts/check-banned-words.sh
