@@ -1,5 +1,5 @@
 //
-//  ORBITApp.swift
+//  OrbitApp.swift
 //  Orbit
 //
 //  Created by Nikhil Gour on 08/06/26.

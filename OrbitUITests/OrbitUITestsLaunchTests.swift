@@ -1,5 +1,5 @@
 //
-//  ORBITUITestsLaunchTests.swift
+//  OrbitUITestsLaunchTests.swift
 //  OrbitUITests
 //
 //  Created by Nikhil Gour on 08/06/26.
