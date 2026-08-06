@@ -5,8 +5,8 @@
 //  Created by Nikhil Gour on 08/06/26.
 //
 
-@testable import Orbit
 import Testing
+@testable import Orbit
 
 struct OrbitTests {
     @Test func example() {

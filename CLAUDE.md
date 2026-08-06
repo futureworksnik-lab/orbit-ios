@@ -15,7 +15,7 @@ Current true state, confirmed by direct inspection — trust this over any stale
 - `.gitignore` added at `prod/ORBIT/.gitignore` (Xcode/SPM/secrets patterns; `Package.resolved` deliberately NOT ignored).
 - **No `Package.swift` exists, by design** — this is an `.xcodeproj`-based app, not a Swift package. SPM dependencies live natively in `project.pbxproj`'s `XCRemoteSwiftPackageReference`/`XCSwiftPackageProductDependency` sections, not a standalone manifest. Do not go looking for one or create a stub.
 - No design tokens yet (design-system work starts in a later D1/D3 checkpoint).
-- Git: branch `main`, no remote configured yet.
+- Git: branch `main`, remote `origin` → `https://github.com/futureworksnik-lab/orbit-ios` (private repo, pushed).
 
 **Update this line after every CP/WIP commit** (per `TRD_PARENT.md` §11 handoff discipline) so a new session can resume without re-deriving state.
 
@@ -28,7 +28,7 @@ Current true state, confirmed by direct inspection — trust this over any stale
 - Images: Kingfisher (`KFImage`), aggressive disk cache.
 - Animation: Lottie (`lottie-spm`) for the reveal/aha moment; native SwiftUI springs elsewhere.
 - Keychain: KeychainAccess, for session tokens only.
-- Lint/format: SwiftLint + SwiftFormat (added at CP-2 — not installed yet, so `.claude/hooks/swift-autoformat-lint.sh` currently no-ops).
+- Lint/format: SwiftLint + SwiftFormat, installed locally via Homebrew; configs (`.swiftlint.yml`/`.swiftformat`) land at CP-2, at which point `.claude/hooks/swift-autoformat-lint.sh` becomes fully functional.
 
 ## Conventions
 
