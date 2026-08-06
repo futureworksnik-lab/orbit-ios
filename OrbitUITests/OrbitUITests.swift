@@ -1,14 +1,13 @@
 //
 //  ORBITUITests.swift
-//  ORBITUITests
+//  OrbitUITests
 //
 //  Created by Nikhil Gour on 08/06/26.
 //
 
 import XCTest
 
-final class ORBITUITests: XCTestCase {
-
+final class OrbitUITests: XCTestCase {
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -23,7 +22,7 @@ final class ORBITUITests: XCTestCase {
     }
 
     @MainActor
-    func testExample() throws {
+    func testExample() {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
@@ -34,7 +33,7 @@ final class ORBITUITests: XCTestCase {
     }
 
     @MainActor
-    func testLaunchPerformance() throws {
+    func testLaunchPerformance() {
         // This measures how long it takes to launch your application.
         measure(metrics: [XCTApplicationLaunchMetric()]) {
             XCUIApplication().launch()

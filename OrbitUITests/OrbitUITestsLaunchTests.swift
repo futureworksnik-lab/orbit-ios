@@ -1,14 +1,13 @@
 //
 //  ORBITUITestsLaunchTests.swift
-//  ORBITUITests
+//  OrbitUITests
 //
 //  Created by Nikhil Gour on 08/06/26.
 //
 
 import XCTest
 
-final class ORBITUITestsLaunchTests: XCTestCase {
-
+final class OrbitUITestsLaunchTests: XCTestCase {
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }
@@ -18,7 +17,7 @@ final class ORBITUITestsLaunchTests: XCTestCase {
     }
 
     @MainActor
-    func testLaunch() throws {
+    func testLaunch() {
         let app = XCUIApplication()
         app.launch()
 

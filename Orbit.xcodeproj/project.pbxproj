@@ -12,37 +12,37 @@
 			containerPortal = F609F2142FD61CEA003CA2C6 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F609F21B2FD61CEA003CA2C6;
-			remoteInfo = ORBIT;
+			remoteInfo = Orbit;
 		};
 		F609F2362FD61CEB003CA2C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F609F2142FD61CEA003CA2C6 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F609F21B2FD61CEA003CA2C6;
-			remoteInfo = ORBIT;
+			remoteInfo = Orbit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F609F21C2FD61CEA003CA2C6 /* ORBIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ORBIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F609F22B2FD61CEB003CA2C6 /* ORBITTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ORBITTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F609F2352FD61CEB003CA2C6 /* ORBITUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ORBITUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F609F21C2FD61CEA003CA2C6 /* Orbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F609F22B2FD61CEB003CA2C6 /* OrbitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrbitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F609F2352FD61CEB003CA2C6 /* OrbitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrbitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		F609F21E2FD61CEA003CA2C6 /* ORBIT */ = {
+		F609F21E2FD61CEA003CA2C6 /* Orbit */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ORBIT;
+			path = Orbit;
 			sourceTree = "<group>";
 		};
-		F609F22E2FD61CEB003CA2C6 /* ORBITTests */ = {
+		F609F22E2FD61CEB003CA2C6 /* OrbitTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ORBITTests;
+			path = OrbitTests;
 			sourceTree = "<group>";
 		};
-		F609F2382FD61CEB003CA2C6 /* ORBITUITests */ = {
+		F609F2382FD61CEB003CA2C6 /* OrbitUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ORBITUITests;
+			path = OrbitUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		F609F2132FD61CEA003CA2C6 = {
 			isa = PBXGroup;
 			children = (
-				F609F21E2FD61CEA003CA2C6 /* ORBIT */,
-				F609F22E2FD61CEB003CA2C6 /* ORBITTests */,
-				F609F2382FD61CEB003CA2C6 /* ORBITUITests */,
+				F609F21E2FD61CEA003CA2C6 /* Orbit */,
+				F609F22E2FD61CEB003CA2C6 /* OrbitTests */,
+				F609F2382FD61CEB003CA2C6 /* OrbitUITests */,
 				F609F21D2FD61CEA003CA2C6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 		F609F21D2FD61CEA003CA2C6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F609F21C2FD61CEA003CA2C6 /* ORBIT.app */,
-				F609F22B2FD61CEB003CA2C6 /* ORBITTests.xctest */,
-				F609F2352FD61CEB003CA2C6 /* ORBITUITests.xctest */,
+				F609F21C2FD61CEA003CA2C6 /* Orbit.app */,
+				F609F22B2FD61CEB003CA2C6 /* OrbitTests.xctest */,
+				F609F2352FD61CEB003CA2C6 /* OrbitUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F609F21B2FD61CEA003CA2C6 /* ORBIT */ = {
+		F609F21B2FD61CEA003CA2C6 /* Orbit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F609F23F2FD61CEB003CA2C6 /* Build configuration list for PBXNativeTarget "ORBIT" */;
+			buildConfigurationList = F609F23F2FD61CEB003CA2C6 /* Build configuration list for PBXNativeTarget "Orbit" */;
 			buildPhases = (
 				F609F2182FD61CEA003CA2C6 /* Sources */,
 				F609F2192FD61CEA003CA2C6 /* Frameworks */,
@@ -108,18 +108,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				F609F21E2FD61CEA003CA2C6 /* ORBIT */,
+				F609F21E2FD61CEA003CA2C6 /* Orbit */,
 			);
-			name = ORBIT;
+			name = Orbit;
 			packageProductDependencies = (
 			);
-			productName = ORBIT;
-			productReference = F609F21C2FD61CEA003CA2C6 /* ORBIT.app */;
+			productName = Orbit;
+			productReference = F609F21C2FD61CEA003CA2C6 /* Orbit.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F609F22A2FD61CEB003CA2C6 /* ORBITTests */ = {
+		F609F22A2FD61CEB003CA2C6 /* OrbitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F609F2422FD61CEB003CA2C6 /* Build configuration list for PBXNativeTarget "ORBITTests" */;
+			buildConfigurationList = F609F2422FD61CEB003CA2C6 /* Build configuration list for PBXNativeTarget "OrbitTests" */;
 			buildPhases = (
 				F609F2272FD61CEB003CA2C6 /* Sources */,
 				F609F2282FD61CEB003CA2C6 /* Frameworks */,
@@ -131,18 +131,18 @@
 				F609F22D2FD61CEB003CA2C6 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				F609F22E2FD61CEB003CA2C6 /* ORBITTests */,
+				F609F22E2FD61CEB003CA2C6 /* OrbitTests */,
 			);
-			name = ORBITTests;
+			name = OrbitTests;
 			packageProductDependencies = (
 			);
-			productName = ORBITTests;
-			productReference = F609F22B2FD61CEB003CA2C6 /* ORBITTests.xctest */;
+			productName = OrbitTests;
+			productReference = F609F22B2FD61CEB003CA2C6 /* OrbitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F609F2342FD61CEB003CA2C6 /* ORBITUITests */ = {
+		F609F2342FD61CEB003CA2C6 /* OrbitUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F609F2452FD61CEB003CA2C6 /* Build configuration list for PBXNativeTarget "ORBITUITests" */;
+			buildConfigurationList = F609F2452FD61CEB003CA2C6 /* Build configuration list for PBXNativeTarget "OrbitUITests" */;
 			buildPhases = (
 				F609F2312FD61CEB003CA2C6 /* Sources */,
 				F609F2322FD61CEB003CA2C6 /* Frameworks */,
@@ -154,13 +154,13 @@
 				F609F2372FD61CEB003CA2C6 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				F609F2382FD61CEB003CA2C6 /* ORBITUITests */,
+				F609F2382FD61CEB003CA2C6 /* OrbitUITests */,
 			);
-			name = ORBITUITests;
+			name = OrbitUITests;
 			packageProductDependencies = (
 			);
-			productName = ORBITUITests;
-			productReference = F609F2352FD61CEB003CA2C6 /* ORBITUITests.xctest */;
+			productName = OrbitUITests;
+			productReference = F609F2352FD61CEB003CA2C6 /* OrbitUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F609F2172FD61CEA003CA2C6 /* Build configuration list for PBXProject "ORBIT" */;
+			buildConfigurationList = F609F2172FD61CEA003CA2C6 /* Build configuration list for PBXProject "Orbit" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F609F21B2FD61CEA003CA2C6 /* ORBIT */,
-				F609F22A2FD61CEB003CA2C6 /* ORBITTests */,
-				F609F2342FD61CEB003CA2C6 /* ORBITUITests */,
+				F609F21B2FD61CEA003CA2C6 /* Orbit */,
+				F609F22A2FD61CEB003CA2C6 /* OrbitTests */,
+				F609F2342FD61CEB003CA2C6 /* OrbitUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		F609F22D2FD61CEB003CA2C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F609F21B2FD61CEA003CA2C6 /* ORBIT */;
+			target = F609F21B2FD61CEA003CA2C6 /* Orbit */;
 			targetProxy = F609F22C2FD61CEB003CA2C6 /* PBXContainerItemProxy */;
 		};
 		F609F2372FD61CEB003CA2C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F609F21B2FD61CEA003CA2C6 /* ORBIT */;
+			target = F609F21B2FD61CEA003CA2C6 /* Orbit */;
 			targetProxy = F609F2362FD61CEB003CA2C6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -322,7 +322,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -380,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -410,7 +410,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilgour.ORBIT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orbit.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -442,7 +442,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilgour.ORBIT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orbit.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -462,9 +462,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3925Z7934T;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilgour.ORBITTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orbit.app.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -472,7 +472,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ORBIT.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ORBIT";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Orbit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Orbit";
 			};
 			name = Debug;
 		};
@@ -484,9 +484,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3925Z7934T;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilgour.ORBITTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orbit.app.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -494,7 +494,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ORBIT.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ORBIT";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Orbit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Orbit";
 			};
 			name = Release;
 		};
@@ -506,7 +506,7 @@
 				DEVELOPMENT_TEAM = 3925Z7934T;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilgour.ORBITUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orbit.app.uitests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -514,7 +514,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ORBIT;
+				TEST_TARGET_NAME = Orbit;
 			};
 			name = Debug;
 		};
@@ -526,7 +526,7 @@
 				DEVELOPMENT_TEAM = 3925Z7934T;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilgour.ORBITUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orbit.app.uitests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -534,14 +534,14 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ORBIT;
+				TEST_TARGET_NAME = Orbit;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F609F2172FD61CEA003CA2C6 /* Build configuration list for PBXProject "ORBIT" */ = {
+		F609F2172FD61CEA003CA2C6 /* Build configuration list for PBXProject "Orbit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F609F23D2FD61CEB003CA2C6 /* Debug */,
@@ -550,7 +550,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F609F23F2FD61CEB003CA2C6 /* Build configuration list for PBXNativeTarget "ORBIT" */ = {
+		F609F23F2FD61CEB003CA2C6 /* Build configuration list for PBXNativeTarget "Orbit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F609F2402FD61CEB003CA2C6 /* Debug */,
@@ -559,7 +559,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F609F2422FD61CEB003CA2C6 /* Build configuration list for PBXNativeTarget "ORBITTests" */ = {
+		F609F2422FD61CEB003CA2C6 /* Build configuration list for PBXNativeTarget "OrbitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F609F2432FD61CEB003CA2C6 /* Debug */,
@@ -568,7 +568,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F609F2452FD61CEB003CA2C6 /* Build configuration list for PBXNativeTarget "ORBITUITests" */ = {
+		F609F2452FD61CEB003CA2C6 /* Build configuration list for PBXNativeTarget "OrbitUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F609F2462FD61CEB003CA2C6 /* Debug */,
