@@ -1,0 +1,21 @@
+# Xcode
+.DS_Store
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+*.xcactivitylog
+*.hmap
+
+# Swift Package Manager
+.build/
+.swiftpm/
+# Do NOT ignore Package.resolved -- this is an app, not a library; CI depends on
+# committed, pinned dependency versions.
+
+# Secrets
+.env
+.env.*
+*.xcconfig

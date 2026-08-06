@@ -29,9 +29,25 @@
 		F609F2352FD61CEB003CA2C6 /* OrbitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrbitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		831F7AC3FD08527BEBD2E974 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Core/.gitkeep,
+				DesignSystem/.gitkeep,
+				Features/.gitkeep,
+				Resources/.gitkeep,
+			);
+			target = F609F21B2FD61CEA003CA2C6 /* Orbit */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F609F21E2FD61CEA003CA2C6 /* Orbit */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				831F7AC3FD08527BEBD2E974 /* PBXFileSystemSynchronizedBuildFileExceptionSet */,
+			);
 			path = Orbit;
 			sourceTree = "<group>";
 		};
