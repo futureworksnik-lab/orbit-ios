@@ -15,6 +15,18 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install tools
         run: brew install xcbeautify swiftlint swiftformat
+      - name: Diagnose Xcode / simulator environment
+        run: |
+          echo "-- Installed Xcode apps --"
+          ls /Applications | grep Xcode || true
+          echo "-- xcode-select -p --"
+          xcode-select -p
+          echo "-- xcodebuild -version --"
+          xcodebuild -version
+          echo "-- simctl runtimes --"
+          xcrun simctl list runtimes || true
+          echo "-- simctl devices available --"
+          xcrun simctl list devices available || true
       - name: Resolve SPM packages
         run: xcodebuild -resolvePackageDependencies -project Orbit.xcodeproj -scheme Orbit
       - name: Build & test
