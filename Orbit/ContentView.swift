@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        // anonymous placeholder note for gate testing
         Text("Orbit")
     }
 }
