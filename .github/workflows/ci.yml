@@ -17,20 +17,23 @@ jobs:
         run: brew install xcbeautify swiftlint swiftformat
       - name: Warm CoreSimulatorService
         run: |
-          xcrun simctl list runtimes
-          xcrun simctl list devices available
+          xcrun simctl list runtimes || true
+          xcrun simctl list devices available || true
       - name: Resolve SPM packages
         run: xcodebuild -resolvePackageDependencies -project Orbit.xcodeproj -scheme Orbit
       - name: Select simulator destination
         id: sim
         run: |
           DEVICE_ID=$(xcrun simctl list devices available -j | jq -r '
-            .devices | to_entries
-            | map(select(.key | contains("iOS")))
-            | sort_by(.key) | reverse | .[0].value
-            | map(select(.name | startswith("iPhone")))[0].udid
+            [.devices | to_entries[]
+              | select(.key | test("iOS-[0-9]+-[0-9]+"))
+              | (.key | capture("iOS-(?<maj>[0-9]+)-(?<min>[0-9]+)")) as $v
+              | .value[]
+              | select(.name | startswith("iPhone"))
+              | {maj: ($v.maj | tonumber), min: ($v.min | tonumber), udid}]
+            | sort_by(.maj, .min) | reverse | .[0].udid // empty
           ')
-          test -n "$DEVICE_ID" && test "$DEVICE_ID" != "null" || {
+          test -n "$DEVICE_ID" || {
             echo "::error::No available iPhone simulator found on this runner."
             exit 1
           }
