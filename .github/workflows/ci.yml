@@ -38,6 +38,10 @@ jobs:
             exit 1
           }
           echo "device_id=$DEVICE_ID" >> "$GITHUB_OUTPUT"
+      - name: Boot simulator and wait for readiness
+        run: |
+          xcrun simctl boot "${{ steps.sim.outputs.device_id }}" || true
+          xcrun simctl bootstatus "${{ steps.sim.outputs.device_id }}" -b
       - name: Build & test
         run: |
           set -o pipefail
