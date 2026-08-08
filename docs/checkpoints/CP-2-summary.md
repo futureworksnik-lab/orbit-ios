@@ -41,3 +41,33 @@ were rebased/merged onto the fixed `main` and re-run for a trustworthy result.
   jq `null`-iteration crash on the fully-cold-runner case, lexicographic instead of numeric
   runtime-version sorting) — all three fixed in a follow-up commit before merge.
 - Final run green end-to-end: https://github.com/futureworksnik-lab/orbit-ios/actions/runs/31270073390
+
+## Branch protection & repo visibility
+
+Branch protection on `main` was blocked by GitHub's plan tier for a private repo (confirmed 403
+"Upgrade to GitHub Pro or make this repository public"). The founder decided to make the repo
+public rather than pay for GitHub Pro. Executed and independently confirmed by reading the
+settings back (not assumed from the write's response):
+- `gh api repos/futureworksnik-lab/orbit-ios` → `"private": false`.
+- `gh api repos/futureworksnik-lab/orbit-ios/branches/main/protection` →
+  `required_status_checks.contexts: ["Build, Test, Lint"]`, `strict: true`, `enforce_admins.enabled: true`,
+  `allow_force_pushes.enabled: false`, `allow_deletions.enabled: false`.
+- `gh api repos/futureworksnik-lab/orbit-ios/branches/main` → `"protected": true`.
+
+Note: `required_pull_request_reviews` was left unset (no PR review requirement) — this protects
+merges from a red CI run, matching the checkpoint's own test, but does not force every change
+through a PR. That's an intentional, minimal scope for a solo-founder repo; revisit if that ever
+needs tightening.
+
+## Debt / follow-ups
+
+- `feat/cp-2-ci-fix`'s local branch (squash-merged into `main`) is stale but harmless — a safety
+  hook blocks `git branch -D` for the agent; the founder can run it directly if they want it gone.
+- The repo is now public. No secrets are committed (`.gitignore` covers `Secrets.xcconfig`,
+  `.env`), but this is worth a final skim before any future commit if that ever changes.
+
+## WIP commits
+
+`[WIP-2.A]` (3e292a0, prior session) · `[WIP-2.B]` (1dca1e7, prior session) ·
+`[WIP-2.C]` (6adda46 + follow-up fix e10306a, squashed to 7b8dba0 via PR #3) ·
+`[WIP-2.D]` (a885936) · this checkpoint closes with the `[CP-2]` commit below.
