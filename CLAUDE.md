@@ -2,7 +2,7 @@
 
 This is the TRD_D1-CP-1-style "brain" for the actual Xcode project. Workspace-level context (personas, banned vocabulary, archive rules, MCP servers) lives one level up in the root `CLAUDE.md` — not duplicated here. This file is tracked by this repo's own git history; update it after every checkpoint.
 
-## active: CP-2 (not started)
+## active: CP-2 (in progress — WIP-2.A + WIP-2.B committed; CI added but not yet verified green, last run flaked on the iPhone 16 simulator destination; two test branches (test/ci-banned-word-gate, test/ci-format-gate) exist to validate the CI gates)
 
 Current true state, confirmed by direct inspection — trust this over any stale prose below it:
 - CP-1 (Repo, Xcode project, SPM, CLAUDE.md) is complete.
