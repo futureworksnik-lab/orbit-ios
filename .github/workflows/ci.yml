@@ -15,26 +15,32 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install tools
         run: brew install xcbeautify swiftlint swiftformat
-      - name: Diagnose Xcode / simulator environment
+      - name: Warm CoreSimulatorService
         run: |
-          echo "-- Installed Xcode apps --"
-          ls /Applications | grep Xcode || true
-          echo "-- xcode-select -p --"
-          xcode-select -p
-          echo "-- xcodebuild -version --"
-          xcodebuild -version
-          echo "-- simctl runtimes --"
-          xcrun simctl list runtimes || true
-          echo "-- simctl devices available --"
-          xcrun simctl list devices available || true
+          xcrun simctl list runtimes
+          xcrun simctl list devices available
       - name: Resolve SPM packages
         run: xcodebuild -resolvePackageDependencies -project Orbit.xcodeproj -scheme Orbit
+      - name: Select simulator destination
+        id: sim
+        run: |
+          DEVICE_ID=$(xcrun simctl list devices available -j | jq -r '
+            .devices | to_entries
+            | map(select(.key | contains("iOS")))
+            | sort_by(.key) | reverse | .[0].value
+            | map(select(.name | startswith("iPhone")))[0].udid
+          ')
+          test -n "$DEVICE_ID" && test "$DEVICE_ID" != "null" || {
+            echo "::error::No available iPhone simulator found on this runner."
+            exit 1
+          }
+          echo "device_id=$DEVICE_ID" >> "$GITHUB_OUTPUT"
       - name: Build & test
         run: |
           set -o pipefail
           xcodebuild build test \
             -project Orbit.xcodeproj -scheme Orbit \
-            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            -destination "platform=iOS Simulator,id=${{ steps.sim.outputs.device_id }}" \
             | xcbeautify
       - name: SwiftLint
         run: swiftlint lint --strict
