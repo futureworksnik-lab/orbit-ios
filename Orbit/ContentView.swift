@@ -9,8 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        // orbit-vocabulary-ok: test comment for CI gate escape-hatch verification
-        // anonymous placeholder note for gate testing
         Text("Orbit")
     }
 }
