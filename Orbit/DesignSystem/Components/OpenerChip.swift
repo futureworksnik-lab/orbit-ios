@@ -1,0 +1,39 @@
+//
+//  OpenerChip.swift
+//  Orbit
+//
+//  Created by Nikhil Gour on 08/09/26.
+//
+//  CP-4 WIP-4.B — single-select opener picker chip, built on design tokens (CP-3) and the shared
+//  ChipChromeLabel visual helper (ChipChrome.swift).
+//
+
+import SwiftUI
+
+/// Always-interactive single-select picker chip. Tapping fires `onTap` unconditionally — the
+/// caller's ViewModel owns what "selected" means within its single-select group, this view has
+/// no selection state of its own beyond the `isSelected` it's told to render.
+struct OpenerChip: View {
+    let text: String
+    let isSelected: Bool
+    let onTap: () -> Void
+
+    var body: some View {
+        Button {
+            Haptics.chipToggle()
+            onTap()
+        } label: {
+            ChipChromeLabel(text: text, isSelected: isSelected)
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+#Preview {
+    HStack(spacing: Spacing.s12) {
+        OpenerChip(text: "Coffee run?", isSelected: false) {}
+        OpenerChip(text: "Coffee run?", isSelected: true) {}
+    }
+    .padding(Spacing.s16)
+    .background(Color.bgSpace)
+}
