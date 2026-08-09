@@ -23,6 +23,40 @@ file_length:
   warning: 400
   error: 600
 
+trailing_comma:
+  mandatory_comma: true # matches .swiftformat's `--commas always`
+
+large_tuple:
+  # rgba255() -> (r: Int, g: Int, b: Int, a: Int) is a spec-mandated 4-member tuple
+  # (DesignSystem/Tokens/Color+Tokens.swift); raised from the default (warning 2, error 3)
+  # to accommodate it.
+  warning: 4
+  error: 5
+
+identifier_name:
+  min_length:
+    warning: 1
+    error: 1
+  excluded:
+    - id
+    # Design-token domain vocabulary (color channels, coordinates, type scale, elevation
+    # levels, spacing grid) is legitimately short — see DesignSystem/Tokens/.
+    - r
+    - g
+    - b
+    - a
+    - x
+    - y
+    - h1
+    - h2
+    - h3
+    - s4
+    - s8
+    - e0
+    - e1
+    - e2
+    - e3
+
 opt_in_rules:
   - force_unwrapping
   - implicitly_unwrapped_optional
