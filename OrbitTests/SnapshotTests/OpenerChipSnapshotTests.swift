@@ -16,11 +16,11 @@ import Testing
 struct OpenerChipSnapshotTests {
     @Test func unselected() {
         let view = snapshotHost { OpenerChip(text: "Coffee run?", isSelected: false) {} }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func selected() {
         let view = snapshotHost { OpenerChip(text: "Coffee run?", isSelected: true) {} }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 }

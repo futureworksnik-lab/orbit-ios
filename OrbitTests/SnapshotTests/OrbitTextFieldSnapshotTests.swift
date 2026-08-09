@@ -21,14 +21,14 @@ struct OrbitTextFieldSnapshotTests {
         let view = snapshotHost {
             OrbitTextField(placeholder: "Campus email", text: .constant(""))
         }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func filled() {
         let view = snapshotHost {
             OrbitTextField(placeholder: "Campus email", text: .constant("nik@school.edu"))
         }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func error() {
@@ -39,6 +39,6 @@ struct OrbitTextFieldSnapshotTests {
                 errorMessage: "Enter a valid .edu address"
             )
         }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 }

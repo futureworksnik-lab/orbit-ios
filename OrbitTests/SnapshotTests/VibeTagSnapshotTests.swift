@@ -18,16 +18,16 @@ import Testing
 struct VibeTagSnapshotTests {
     @Test func unselectedPicker() {
         let view = snapshotHost { VibeTag(text: "Night owl", isSelected: false) {} }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func selectedPicker() {
         let view = snapshotHost { VibeTag(text: "Night owl", isSelected: true) {} }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func staticDisplay() {
         let view = snapshotHost { VibeTag(text: "Night owl") }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 }

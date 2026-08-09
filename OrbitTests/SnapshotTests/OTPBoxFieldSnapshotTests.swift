@@ -19,23 +19,23 @@ import Testing
 struct OTPBoxFieldSnapshotTests {
     @Test func empty() {
         let view = snapshotHost { OTPBoxField(code: .constant("")) }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func partial() {
         let view = snapshotHost { OTPBoxField(code: .constant("12")) }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func full() {
         let view = snapshotHost { OTPBoxField(code: .constant("123456")) }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func error() {
         let view = snapshotHost {
             OTPBoxField(code: .constant("123456"), errorMessage: "Incorrect code")
         }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 }

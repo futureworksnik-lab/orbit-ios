@@ -28,6 +28,6 @@ struct OrbitCardSnapshotTests {
                 }
             }
         }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 }

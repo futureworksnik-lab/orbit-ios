@@ -21,7 +21,7 @@ import Testing
 struct OrbitButtonSnapshotTests {
     @Test func primaryRest() {
         let view = snapshotHost { OrbitButton(title: "Continue", kind: .primary) {} }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func primaryDisabled() {
@@ -29,17 +29,17 @@ struct OrbitButtonSnapshotTests {
             OrbitButton(title: "Continue", kind: .primary) {}
                 .disabled(true)
         }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func primaryLoading() {
         let view = snapshotHost { OrbitButton(title: "Continue", kind: .primary, isLoading: true) {} }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func secondaryRest() {
         let view = snapshotHost { OrbitButton(title: "Continue", kind: .secondary) {} }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func secondaryDisabled() {
@@ -47,27 +47,27 @@ struct OrbitButtonSnapshotTests {
             OrbitButton(title: "Continue", kind: .secondary) {}
                 .disabled(true)
         }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func destructiveRest() {
         let view = snapshotHost { OrbitButton(title: "Continue", kind: .destructive) {} }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func primaryPressed() {
         let view = snapshotHost { PressedButtonSnapshot(kind: .primary) }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func secondaryPressed() {
         let view = snapshotHost { PressedButtonSnapshot(kind: .secondary) }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func destructivePressed() {
         let view = snapshotHost { PressedButtonSnapshot(kind: .destructive) }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 }
 

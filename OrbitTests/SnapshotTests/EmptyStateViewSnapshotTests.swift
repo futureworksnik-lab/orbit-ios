@@ -23,7 +23,7 @@ struct EmptyStateViewSnapshotTests {
                 actionTitle: "Invite a friend"
             ) {}
         }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func withoutCTA() {
@@ -34,6 +34,6 @@ struct EmptyStateViewSnapshotTests {
                 message: "Requests you send will appear here until they're accepted."
             )
         }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 }

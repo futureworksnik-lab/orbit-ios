@@ -16,19 +16,19 @@ import Testing
 struct AvatarSnapshotTests {
     @Test func initialsFallback() {
         let view = snapshotHost { Avatar(initials: "NG", size: 64) }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func initialsFallbackWithGlyph() {
         let view = snapshotHost { Avatar(initials: "NG", size: 64, showsMutualPathGlyph: true) }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func withImage() {
         let view = snapshotHost {
             Avatar(image: Image(systemName: "photo.fill"), initials: "NG", size: 64)
         }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func withImageAndGlyph() {
@@ -40,6 +40,6 @@ struct AvatarSnapshotTests {
                 showsMutualPathGlyph: true
             )
         }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 }

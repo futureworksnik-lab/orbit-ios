@@ -18,6 +18,6 @@ import Testing
 struct SkeletonViewSnapshotTests {
     @Test func restFrame() {
         let view = snapshotHost { SkeletonView(height: 96) }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 }

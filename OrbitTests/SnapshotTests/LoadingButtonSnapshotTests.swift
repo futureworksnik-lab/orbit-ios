@@ -19,16 +19,16 @@ import Testing
 struct LoadingButtonSnapshotTests {
     @Test func primaryRest() {
         let view = snapshotHost { LoadingButton(title: "Continue", kind: .primary) {} }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func secondaryRest() {
         let view = snapshotHost { LoadingButton(title: "Continue", kind: .secondary) {} }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 
     @Test func destructiveRest() {
         let view = snapshotHost { LoadingButton(title: "Continue", kind: .destructive) {} }
-        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98))
+        assertSnapshot(of: view, as: .image(perceptualPrecision: 0.98, traits: .init(displayScale: 3)))
     }
 }
