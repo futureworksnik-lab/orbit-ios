@@ -34,9 +34,9 @@ large_tuple:
   error: 5
 
 identifier_name:
-  min_length:
-    warning: 1
-    error: 1
+  # min_length stays at SwiftLint's default (warning 3, error 2) — the excluded list below
+  # whitelists the specific short design-token names by exact match, so business-logic code
+  # elsewhere still gets flagged for terse identifiers.
   excluded:
     - id
     # Design-token domain vocabulary (color channels, coordinates, type scale, elevation
