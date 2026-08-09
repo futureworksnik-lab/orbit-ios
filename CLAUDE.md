@@ -2,7 +2,7 @@
 
 This is the TRD_D1-CP-1-style "brain" for the actual Xcode project. Workspace-level context (personas, banned vocabulary, archive rules, MCP servers) lives one level up in the root `CLAUDE.md` — not duplicated here. This file is tracked by this repo's own git history; update it after every checkpoint.
 
-## active: CP-3 WIP-3.A–3.C complete (design-system tokens: color, typography, spacing, radius, shadow, motion, haptics) on branch `feat/cp-3-design-tokens` — pending `trd-compliance-reviewer` sign-off before the tracker line advances to "CP-3 complete". Next after review/merge: CP-4 (core components).
+## active: CP-3 complete — design-system tokens (color, typography, spacing, radius, shadow, motion, haptics) matching TRD_PARENT.md §4 exactly, `trd-compliance-reviewer` sign-off obtained (one finding fixed: `.swiftlint.yml` identifier_name scope). On branch `feat/cp-3-design-tokens`, pending PR merge. Next: CP-4 (core components).
 
 Current true state, confirmed by direct inspection — trust this over any stale prose below it:
 - CP-1 (Repo, Xcode project, SPM, CLAUDE.md) is complete.
