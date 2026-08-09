@@ -30,11 +30,12 @@ struct TokenPreviewView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: Spacing.sectionGap) {
                 colorSection
                 typographySection
+                layoutSection
             }
-            .padding(16)
+            .padding(Spacing.screenPadding)
         }
         .background(Color.bgSpace)
     }
@@ -73,6 +74,27 @@ struct TokenPreviewView: View {
             Text("Caption — orbitCaption").font(.orbitCaption).foregroundStyle(Color.textPrimary)
             Text("Button — orbitButton").font(.orbitButton).foregroundStyle(Color.textPrimary)
             Text("Label — orbitLabelStyle").orbitLabelStyle().foregroundStyle(Color.textPrimary)
+        }
+    }
+
+    private var layoutSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Layout").orbitLabelStyle().foregroundStyle(Color.textSecondary)
+            VStack(alignment: .leading, spacing: Spacing.s8) {
+                Text("Card — Radius.card + e2 shadow")
+                    .font(.orbitSubhead)
+                    .foregroundStyle(Color.textPrimary)
+                Text("Spacing.cardInset padding")
+                    .font(.orbitFootnote)
+                    .foregroundStyle(Color.textSecondary)
+            }
+            .padding(Spacing.cardInset)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(
+                RoundedRectangle(cornerRadius: Radius.card)
+                    .fill(Color.surface1)
+            )
+            .orbitShadow(.e2)
         }
     }
 
