@@ -153,6 +153,7 @@
 			);
 			name = OrbitTests;
 			packageProductDependencies = (
+				594BC9B024D1EBDA096AF675 /* SnapshotTesting */,
 			);
 			productName = OrbitTests;
 			productReference = F609F22B2FD61CEB003CA2C6 /* OrbitTests.xctest */;
@@ -216,6 +217,7 @@
 			packageReferences = (
 				DCB62DE414B69C9F1150F337 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 				25DE5F0B08865E4428EA616C /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				D2796C0221173B39E40E1E52 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F609F21D2FD61CEA003CA2C6 /* Products */;
@@ -618,6 +620,14 @@
 				minimumVersion = 4.2.2;
 			};
 		};
+		D2796C0221173B39E40E1E52 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.19.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -630,6 +640,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 25DE5F0B08865E4428EA616C /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		594BC9B024D1EBDA096AF675 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2796C0221173B39E40E1E52 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
