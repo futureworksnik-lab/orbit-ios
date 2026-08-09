@@ -11,6 +11,8 @@
 import SwiftUI
 
 struct TokenPreviewView: View {
+    @State private var isButtonPressed = false
+
     private let colorTokens: [(name: String, color: Color)] = [
         ("bgSpace", .bgSpace),
         ("surface1", .surface1),
@@ -34,6 +36,7 @@ struct TokenPreviewView: View {
                 colorSection
                 typographySection
                 layoutSection
+                motionSection
             }
             .padding(Spacing.screenPadding)
         }
@@ -95,6 +98,30 @@ struct TokenPreviewView: View {
                     .fill(Color.surface1)
             )
             .orbitShadow(.e2)
+        }
+    }
+
+    private var motionSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Motion + Haptics").orbitLabelStyle().foregroundStyle(Color.textSecondary)
+            Text("Tap — orbitInteractive spring + .impact(.light)")
+                .font(.orbitFootnote)
+                .foregroundStyle(Color.textSecondary)
+            Text("Tap me")
+                .font(.orbitButton)
+                .foregroundStyle(Color.textPrimary)
+                .padding(.horizontal, Spacing.s24)
+                .padding(.vertical, Spacing.s12)
+                .background(
+                    RoundedRectangle(cornerRadius: Radius.button)
+                        .fill(Color.indigoPrimary)
+                )
+                .scaleEffect(isButtonPressed ? 0.92 : 1)
+                .animation(.orbitInteractive, value: isButtonPressed)
+                .onTapGesture {
+                    Haptics.selectTap()
+                    isButtonPressed.toggle()
+                }
         }
     }
 
