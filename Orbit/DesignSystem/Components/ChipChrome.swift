@@ -22,7 +22,7 @@ enum ChipChromeAppearance {
     }
 }
 
-/// Shared fill/border/padding/label rendering for a single chip. `OpenerChip` and `VibeTag` each
+/// Shared fill/border/padding/label rendering for one chip. `OpenerChip` and `VibeTag` each
 /// wrap this in whatever interaction wrapper (or lack of one) their own semantics require.
 struct ChipChromeLabel: View {
     let text: String

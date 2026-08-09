@@ -12,7 +12,7 @@
 
 import SwiftUI
 
-/// Icon + title + message, with an optional single CTA. When both `actionTitle` and `action` are
+/// Icon + title + message, with an optional CTA. When both `actionTitle` and `action` are
 /// non-nil the CTA renders as a plain `OrbitButton` — its tap haptic (`Haptics.selectTap()`) is
 /// inherited for free, nothing new to wire here.
 struct EmptyStateView: View {

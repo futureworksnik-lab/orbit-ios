@@ -4,15 +4,15 @@
 //
 //  Created by Nikhil Gour on 08/09/26.
 //
-//  CP-4 WIP-4.B — single-select opener picker chip, built on design tokens (CP-3) and the shared
-//  ChipChromeLabel visual helper (ChipChrome.swift).
+//  CP-4 WIP-4.B — opener picker chip (pick one at a time), built on design tokens (CP-3) and the
+//  shared ChipChromeLabel visual helper (ChipChrome.swift).
 //
 
 import SwiftUI
 
-/// Always-interactive single-select picker chip. Tapping fires `onTap` unconditionally — the
-/// caller's ViewModel owns what "selected" means within its single-select group, this view has
-/// no selection state of its own beyond the `isSelected` it's told to render.
+/// Always-interactive picker chip for a pick-one-at-a-time group. Tapping fires `onTap`
+/// unconditionally — the caller's ViewModel owns what "selected" means within its pick-one group,
+/// this view has no selection state of its own beyond the `isSelected` it's told to render.
 struct OpenerChip: View {
     let text: String
     let isSelected: Bool

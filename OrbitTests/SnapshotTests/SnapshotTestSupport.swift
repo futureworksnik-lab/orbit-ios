@@ -11,7 +11,7 @@
 //
 //  `.fixedSize(horizontal: false, vertical: true)` below is a test-harness-only workaround for a
 //  `UIHostingController`/`.sizeThatFits` measurement quirk: without it, multi-line `Text` (e.g.
-//  EmptyStateView's message, OrbitCard's subtitle) reports its unwrapped single-line intrinsic
+//  EmptyStateView's message, OrbitCard's subtitle) reports its unwrapped one-line intrinsic
 //  width during the snapshot's sizing pass and renders truncated with an ellipsis even though the
 //  final frame has room to wrap — confirmed by inspecting the first recorded reference PNGs. This
 //  is purely a snapshot-measurement artifact, not a production layout bug: none of the 10
