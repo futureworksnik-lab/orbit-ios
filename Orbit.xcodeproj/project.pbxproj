@@ -40,6 +40,44 @@
 			);
 			target = F609F21B2FD61CEA003CA2C6 /* Orbit */;
 		};
+		A3F0E9C1B4D2487F9E6C0A15 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"SnapshotTests/__Snapshots__/AvatarSnapshotTests/initialsFallback.1.png",
+				"SnapshotTests/__Snapshots__/AvatarSnapshotTests/initialsFallbackWithGlyph.1.png",
+				"SnapshotTests/__Snapshots__/AvatarSnapshotTests/withImage.1.png",
+				"SnapshotTests/__Snapshots__/AvatarSnapshotTests/withImageAndGlyph.1.png",
+				"SnapshotTests/__Snapshots__/EmptyStateViewSnapshotTests/withCTA.1.png",
+				"SnapshotTests/__Snapshots__/EmptyStateViewSnapshotTests/withoutCTA.1.png",
+				"SnapshotTests/__Snapshots__/LoadingButtonSnapshotTests/destructiveRest.1.png",
+				"SnapshotTests/__Snapshots__/LoadingButtonSnapshotTests/primaryRest.1.png",
+				"SnapshotTests/__Snapshots__/LoadingButtonSnapshotTests/secondaryRest.1.png",
+				"SnapshotTests/__Snapshots__/OpenerChipSnapshotTests/selected.1.png",
+				"SnapshotTests/__Snapshots__/OpenerChipSnapshotTests/unselected.1.png",
+				"SnapshotTests/__Snapshots__/OrbitButtonSnapshotTests/destructivePressed.1.png",
+				"SnapshotTests/__Snapshots__/OrbitButtonSnapshotTests/destructiveRest.1.png",
+				"SnapshotTests/__Snapshots__/OrbitButtonSnapshotTests/primaryDisabled.1.png",
+				"SnapshotTests/__Snapshots__/OrbitButtonSnapshotTests/primaryLoading.1.png",
+				"SnapshotTests/__Snapshots__/OrbitButtonSnapshotTests/primaryPressed.1.png",
+				"SnapshotTests/__Snapshots__/OrbitButtonSnapshotTests/primaryRest.1.png",
+				"SnapshotTests/__Snapshots__/OrbitButtonSnapshotTests/secondaryDisabled.1.png",
+				"SnapshotTests/__Snapshots__/OrbitButtonSnapshotTests/secondaryPressed.1.png",
+				"SnapshotTests/__Snapshots__/OrbitButtonSnapshotTests/secondaryRest.1.png",
+				"SnapshotTests/__Snapshots__/OrbitCardSnapshotTests/sampleContent.1.png",
+				"SnapshotTests/__Snapshots__/OrbitTextFieldSnapshotTests/defaultEmpty.1.png",
+				"SnapshotTests/__Snapshots__/OrbitTextFieldSnapshotTests/error.1.png",
+				"SnapshotTests/__Snapshots__/OrbitTextFieldSnapshotTests/filled.1.png",
+				"SnapshotTests/__Snapshots__/OTPBoxFieldSnapshotTests/empty.1.png",
+				"SnapshotTests/__Snapshots__/OTPBoxFieldSnapshotTests/error.1.png",
+				"SnapshotTests/__Snapshots__/OTPBoxFieldSnapshotTests/full.1.png",
+				"SnapshotTests/__Snapshots__/OTPBoxFieldSnapshotTests/partial.1.png",
+				"SnapshotTests/__Snapshots__/SkeletonViewSnapshotTests/restFrame.1.png",
+				"SnapshotTests/__Snapshots__/VibeTagSnapshotTests/selectedPicker.1.png",
+				"SnapshotTests/__Snapshots__/VibeTagSnapshotTests/staticDisplay.1.png",
+				"SnapshotTests/__Snapshots__/VibeTagSnapshotTests/unselectedPicker.1.png",
+			);
+			target = F609F22A2FD61CEB003CA2C6 /* OrbitTests */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -53,6 +91,9 @@
 		};
 		F609F22E2FD61CEB003CA2C6 /* OrbitTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A3F0E9C1B4D2487F9E6C0A15 /* PBXFileSystemSynchronizedBuildFileExceptionSet */,
+			);
 			path = OrbitTests;
 			sourceTree = "<group>";
 		};
@@ -153,6 +194,7 @@
 			);
 			name = OrbitTests;
 			packageProductDependencies = (
+				594BC9B024D1EBDA096AF675 /* SnapshotTesting */,
 			);
 			productName = OrbitTests;
 			productReference = F609F22B2FD61CEB003CA2C6 /* OrbitTests.xctest */;
@@ -216,6 +258,7 @@
 			packageReferences = (
 				DCB62DE414B69C9F1150F337 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 				25DE5F0B08865E4428EA616C /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				D2796C0221173B39E40E1E52 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F609F21D2FD61CEA003CA2C6 /* Products */;
@@ -618,6 +661,14 @@
 				minimumVersion = 4.2.2;
 			};
 		};
+		D2796C0221173B39E40E1E52 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.19.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -630,6 +681,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 25DE5F0B08865E4428EA616C /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		594BC9B024D1EBDA096AF675 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2796C0221173B39E40E1E52 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
