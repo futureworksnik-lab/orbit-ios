@@ -28,6 +28,9 @@ struct VibeTag: View {
                 ChipChromeLabel(text: text, isSelected: isSelected)
             }
             .buttonStyle(.plain)
+            // HIG 44×44pt touch-target floor: only the interactive (picker) branch needs a
+            // guaranteed hit area — grown via an existing token (Spacing.s48), chip stays compact.
+            .frame(minHeight: Spacing.s48)
         } else {
             ChipChromeLabel(text: text, isSelected: isSelected)
         }

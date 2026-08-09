@@ -20,22 +20,27 @@ struct SkeletonView: View {
     let height: CGFloat
 
     @State private var isAnimating = false
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         GeometryReader { proxy in
             RoundedRectangle(cornerRadius: cornerRadius)
                 .fill(Color.surface2)
                 .overlay {
+                    // Reduce Motion: hold the gradient centered instead of sweeping it — the
+                    // loading placeholder stays visible without the repeating motion HIG asks
+                    // apps to honor.
                     LinearGradient(
                         colors: [.surface2, .surface1, .surface2],
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     )
                     .frame(width: proxy.size.width)
-                    .offset(x: isAnimating ? proxy.size.width : -proxy.size.width)
+                    .offset(x: reduceMotion ? 0 : (isAnimating ? proxy.size.width : -proxy.size.width))
                 }
                 .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
                 .onAppear {
+                    guard !reduceMotion else { return }
                     withAnimation(
                         Animation.easeInOut(duration: MotionSpec.standardDuration * 4)
                             .repeatForever(autoreverses: true)

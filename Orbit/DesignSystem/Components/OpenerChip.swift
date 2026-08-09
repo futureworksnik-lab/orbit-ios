@@ -26,6 +26,9 @@ struct OpenerChip: View {
             ChipChromeLabel(text: text, isSelected: isSelected)
         }
         .buttonStyle(.plain)
+        // HIG 44×44pt touch-target floor: the visual chip is intentionally compact, so the hit
+        // area is grown via an existing token (Spacing.s48) rather than shrinking the chip itself.
+        .frame(minHeight: Spacing.s48)
     }
 }
 
