@@ -102,4 +102,20 @@ Pure UI/token layer — no secrets, no network, no user input, no persistence. `
 `[WIP-3.C]` (12a151d) — Motion springs + Haptics helper.
 `341e296` — `.swiftlint.yml` fix per compliance review (folded into WIP-3.C's scope, since it
 corrects that same commit's config change rather than opening a new WIP).
+`756db11` — banned-word gate false positive fixed (see Decisions below).
 This checkpoint closes with the `[CP-3]` commit below.
+
+## Post-close CI finding
+
+PR #6's first CI run failed at the **banned-word gate**, not build/test/lint. Root-caused via
+`systematic-debugging` before fixing (not guessed): the gate correctly scans `.swift` comments,
+not just string literals, and List A's `\b(matche?d?|matches)\b` regex can't distinguish
+"D3 must match exactly" (spec-fidelity language, used in every token file's header comment) from
+the banned dating-app sense of "match." This is the same class of unavoidable false positive the
+script's own header comment documents for Foundation's `Date()` — except here it *was* avoidable:
+rewording 8 header-comment occurrences across all 7 token files (e.g. "must match exactly" →
+"must be exact") resolved it with zero semantic loss, so the `orbit-vocabulary-ok:` escape hatch
+wasn't needed. Verified locally before pushing: `bash scripts/check-banned-words.sh` exits 0,
+lint/format/build all still clean. **Lesson for future checkpoints:** avoid "match"/"matches" in
+doc comments describing spec fidelity — CI's own gate treats it exactly like the product-feature
+sense, by design, since it can't tell them apart syntactically.
