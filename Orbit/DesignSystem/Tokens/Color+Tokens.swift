@@ -4,7 +4,7 @@
 //
 //  Created by Nikhil Gour on 08/09/26.
 //
-//  TRD_PARENT.md §4.1 color palette — law, D3 must match exactly.
+//  TRD_PARENT.md §4.1 color palette — law, D3 must be exact.
 //
 
 import SwiftUI

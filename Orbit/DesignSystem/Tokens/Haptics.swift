@@ -4,7 +4,7 @@
 //
 //  Created by Nikhil Gour on 08/09/26.
 //
-//  TRD_PARENT.md §4.3 haptic map — law, D3 must match exactly.
+//  TRD_PARENT.md §4.3 haptic map — law, D3 must be exact.
 //
 
 import UIKit
@@ -25,7 +25,7 @@ enum Haptics {
         generator.selectionChanged()
     }
 
-    /// §4.3 haptic map, purpose-named to match verbatim.
+    /// §4.3 haptic map, purpose-named to mirror it verbatim.
     static func selectTap() {
         impact(.light)
     }

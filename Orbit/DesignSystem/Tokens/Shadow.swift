@@ -4,7 +4,7 @@
 //
 //  Created by Nikhil Gour on 08/09/26.
 //
-//  TRD_PARENT.md §4.3 — shadow/elevation, law, D3 must match exactly.
+//  TRD_PARENT.md §4.3 — shadow/elevation, law, D3 must be exact.
 //
 //  Named `OrbitShadow`, not `ShadowStyle` — `SwiftUI.ShadowStyle` is a real public iOS-17 type
 //  (used by `ShapeStyle.shadow(_:)`); reusing that name would cause an ambiguous-use collision.

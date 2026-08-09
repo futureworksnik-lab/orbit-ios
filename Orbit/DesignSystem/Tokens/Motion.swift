@@ -4,7 +4,7 @@
 //
 //  Created by Nikhil Gour on 08/09/26.
 //
-//  TRD_PARENT.md §4.3 motion defaults — law, D3 must match exactly. 60fps non-negotiable.
+//  TRD_PARENT.md §4.3 motion defaults — law, D3 must be exact. 60fps non-negotiable.
 //
 
 import SwiftUI

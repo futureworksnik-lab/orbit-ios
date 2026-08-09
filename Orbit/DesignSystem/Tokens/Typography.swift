@@ -4,7 +4,7 @@
 //
 //  Created by Nikhil Gour on 08/09/26.
 //
-//  TRD_PARENT.md §4.2 typography — law, D3 must match exactly. Fixed px/weight pairs, not
+//  TRD_PARENT.md §4.2 typography — law, D3 must be exact. Fixed px/weight pairs, not
 //  Dynamic-Type-scaled: §4.2's table has no Dynamic Type mapping anywhere in the source doc.
 //
 
