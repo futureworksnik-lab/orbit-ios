@@ -24,15 +24,33 @@ jobs:
       - name: Select simulator destination
         id: sim
         run: |
-          DEVICE_ID=$(xcrun simctl list devices available -j | jq -r '
-            [.devices | to_entries[]
-              | select(.key | test("iOS-[0-9]+-[0-9]+"))
-              | (.key | capture("iOS-(?<maj>[0-9]+)-(?<min>[0-9]+)")) as $v
-              | .value[]
-              | select(.name | startswith("iPhone"))
-              | {maj: ($v.maj | tonumber), min: ($v.min | tonumber), udid}]
-            | sort_by(.maj, .min) | reverse | .[0].udid // empty
-          ')
+          # Pinned to a specific device+OS (not the highest-available-version scan CP-2 used)
+          # because CP-4's snapshot tests need pixel-reproducible rendering: reference PNGs are
+          # recorded against exactly this simulator, and cross-OS-point-release font rendering
+          # differs enough to fail perceptualPrecision even with matched displayScale (confirmed
+          # on PR #8 -- iOS 26.5-recorded references failed against a dynamically-selected iOS
+          # 26.2 runner). This reintroduces the "cold-runner race" CP-2 deliberately avoided by
+          # going dynamic; accepted because iPhone 16/iOS 26.2 is confirmed pre-installed on the
+          # macOS-15 runner image as of this checkpoint. If a future runner image drops it, this
+          # step falls back to the old dynamic highest-OS scan and prints a warning, since a
+          # falling-back-but-still-green run is better than a hard CI outage -- but the fallback
+          # WILL make snapshot tests flaky again, matching the exact failure this pin exists to
+          # prevent, so re-pin to whatever's actually available if this warning ever fires.
+          DEVICE_ID=$(xcrun simctl list devices available -j \
+            | jq -r '.devices["com.apple.CoreSimulator.SimRuntime.iOS-26-2"] // [] | .[] | select(.name == "iPhone 16") | .udid' \
+            | head -1)
+          if [ -z "$DEVICE_ID" ]; then
+            echo "::warning::Pinned simulator (iPhone 16 / iOS 26.2) not found on this runner -- falling back to dynamic highest-OS selection. Snapshot tests may fail on font-rendering differences; re-pin scripts/../ci.yml to whatever's actually installed."
+            DEVICE_ID=$(xcrun simctl list devices available -j | jq -r '
+              [.devices | to_entries[]
+                | select(.key | test("iOS-[0-9]+-[0-9]+"))
+                | (.key | capture("iOS-(?<maj>[0-9]+)-(?<min>[0-9]+)")) as $v
+                | .value[]
+                | select(.name | startswith("iPhone"))
+                | {maj: ($v.maj | tonumber), min: ($v.min | tonumber), udid}]
+              | sort_by(.maj, .min) | reverse | .[0].udid // empty
+            ')
+          fi
           test -n "$DEVICE_ID" || {
             echo "::error::No available iPhone simulator found on this runner."
             exit 1
@@ -73,3 +91,44 @@ jobs:
           }
       - name: Banned-word gate
         run: bash scripts/check-banned-words.sh
+
+  # TEMPORARY -- generates CP-4 snapshot references against the exact simulator build-test-lint
+  # now pins (iPhone 16 / iOS 26.2), since no local dev machine currently has that runtime
+  # installed. Remove this job once its artifact has been downloaded and committed; it is not
+  # part of the permanent pipeline.
+  record-cp4-snapshots:
+    name: Record CP-4 snapshots (temporary)
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Resolve SPM packages
+        run: xcodebuild -resolvePackageDependencies -project Orbit.xcodeproj -scheme Orbit
+      - name: Select pinned simulator
+        id: sim
+        run: |
+          DEVICE_ID=$(xcrun simctl list devices available -j \
+            | jq -r '.devices["com.apple.CoreSimulator.SimRuntime.iOS-26-2"] // [] | .[] | select(.name == "iPhone 16") | .udid' \
+            | head -1)
+          test -n "$DEVICE_ID" || { echo "::error::iPhone 16 / iOS 26.2 not found."; exit 1; }
+          echo "device_id=$DEVICE_ID" >> "$GITHUB_OUTPUT"
+      - name: Boot simulator
+        run: |
+          xcrun simctl boot "${{ steps.sim.outputs.device_id }}" || true
+          xcrun simctl bootstatus "${{ steps.sim.outputs.device_id }}" -b
+          open -a Simulator
+          sleep 5
+      - name: Delete stale references so swift-snapshot-testing auto-records fresh ones
+        run: rm -f OrbitTests/SnapshotTests/__Snapshots__/*/*.png
+      - name: Record (expected to report failures -- that's how new references get written)
+        continue-on-error: true
+        run: |
+          xcodebuild test \
+            -project Orbit.xcodeproj -scheme Orbit \
+            -destination "platform=iOS Simulator,id=${{ steps.sim.outputs.device_id }}" \
+            -parallel-testing-enabled NO \
+            -only-testing:OrbitTests
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cp4-snapshot-references
+          path: OrbitTests/SnapshotTests/__Snapshots__/**/*.png
